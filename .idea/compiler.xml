@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="service-order" />
-        <module name="service-prodect" />
+        <module name="service-product" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
@@ -16,7 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-demo" options="" />
       <module name="service-order" options="-parameters" />
-      <module name="service-prodect" options="-parameters" />
+      <module name="service-product" options="-parameters" />
       <module name="services" options="" />
     </option>
   </component>
