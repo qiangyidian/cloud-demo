@@ -16,8 +16,8 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/create")
-    public Order createOrder(@RequestParam("userId") Long userId, @RequestParam("orderId") Long orderId ) {
-        Order order = orderService.createOrder(userId,orderId);
+    public Order createOrder(@RequestParam("productId") Long productId,@RequestParam("userId") Long userId ) {
+        Order order = orderService.createOrder(productId,userId);
         return order;
     }
 
