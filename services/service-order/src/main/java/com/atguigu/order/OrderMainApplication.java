@@ -1,4 +1,4 @@
-package com.atguigu;
+package com.atguigu.order;
 
 
 import org.springframework.boot.SpringApplication;
