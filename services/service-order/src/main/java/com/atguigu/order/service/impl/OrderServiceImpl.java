@@ -37,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
     public Order createOrder(Long productId, Long userId) {
 
 
-        Product product = getProductFromRemote(productId);
+        Product product = getProductFromRemoteWithLoadBalancerAnnotation(productId);
         Order order = new Order();
         order.setId(1L);
         order.setTotalAmount(product.getPrice().multiply(new BigDecimal(product.getNum())));
@@ -48,6 +48,11 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
+    /**
+     * 阶段一,仅仅是进行使用远程调用的方法进行调用服务,但是是进行调用指定的服务
+     * @param productId
+     * @return
+     */
     private Product getProductFromRemote(Long productId){
         List<ServiceInstance> instances = discoveryClient.getInstances("service-product");
 
@@ -81,4 +86,20 @@ public class OrderServiceImpl implements OrderService {
 
         return product;
     }
+
+    /**
+     * 阶段三,基于restTemplate上的注解进行实现负载均衡
+     * @param productId
+     * @return
+     */
+    private Product getProductFromRemoteWithLoadBalancerAnnotation(Long productId){
+
+        String url = "http://service-product/product/" + productId;//会进行自动解析服务名的ip以及端口
+
+        //这里的restTemplate是基于负载均衡的注解进行实现的负载均衡
+        Product product = restTemplate.getForObject(url, Product.class);
+
+        return product;
+    }
+
 }
