@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            logger-level: full
+            connect-timeout: 1000
+            read-timeout: 2000
+            ##重试器的配置
+            retryer: feign.retryer.Default #使用OpenFeign的默认的重试器的配置
+            #下面的服务名是OpenFeignclient中进行指定的服务的名字
+          service-product:
+            logger-level: full
+            connect-timeout: 3000
+            read-timeout: 5000

@@ -1,6 +1,7 @@
 package com.atguigu.order.config;
 
 import feign.Logger;
+import feign.Retryer;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,12 @@ public class OderConfig {
         return new RestTemplate();
     }
 
+
+    //另一种重试器的定义的方法
+    @Bean
+    Retryer.Default retry(){
+        return new Retryer.Default();
+    }
 
     //开启OpenFeign的日志功能
     @Bean
