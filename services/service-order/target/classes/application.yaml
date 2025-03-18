@@ -20,9 +20,7 @@ logging:
     com.atguigu.order.feign: debug
 
 
-feign:
-  sentinel:
-    enable: true
+
 #进行多文档的部署模式,如果当前的profile.active=dev就会进行激活下面的配置
 ---
 spring:
