@@ -33,7 +33,7 @@ public class OrderController {
 
     @GetMapping("/config")
     public String getConfig(){
-        return "orderTimeout"+orderProperties.getTimeout()+"orderAutoConfirm"+orderProperties.getAutoConfirm();
+        return "orderTimeout"+orderProperties.getTimeout()+"orderAutoConfirm"+orderProperties.getAutoConfirm()+"databaseUrl"+orderProperties.getDatabaseUrl();
     }
     @GetMapping("/create")
     public Order createOrder(@RequestParam("productId") Long productId,@RequestParam("userId") Long userId ) {

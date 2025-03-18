@@ -1,0 +1,28 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      server-addr: 192.168.10.10
+      config:
+        import-check:
+          enabled: false
+        namespace: ${spring.profiles.active:public}
+
+
+
+
+
+#进行多文档的部署模式,如果当前的profile.active=dev就会进行激活下面的配置
+---
+spring:
+  config:
+    import:
+      - nacos:common.properties?group=order
+      - nacos:database.properties?group=order
+    activate:
+      on-profile: dev
