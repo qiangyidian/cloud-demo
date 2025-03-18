@@ -18,11 +18,11 @@ public class OderConfig {
     }
 
 
-    //另一种重试器的定义的方法
-    @Bean
-    Retryer.Default retry(){
-        return new Retryer.Default();
-    }
+//    //另一种重试器的定义的方法
+//    @Bean
+//    Retryer.Default retry(){
+//        return new Retryer.Default();
+//    }
 
     //开启OpenFeign的日志功能
     @Bean
