@@ -65,6 +65,11 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
             <version>2023.0.3.2</version>
         </dependency>
+<!--        sentinel的加入来进行流量的管控-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name:gateway
+  cloud:
+    nacos:
+      server-addr: 101.34.84.152
+
+
+
+
+server:
+  port: 80
