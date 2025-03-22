@@ -16,6 +16,6 @@ public interface ProductFeignClient {
     //mvc注解的两套使用逻辑
     //1标注在controller上的时候是接收这样的注解
     //2标注在FeignClient上是发送这样的请求
-    @GetMapping("/api/product/product/{id}")
+    @GetMapping("/product/{id}")
     Product getProductById(@PathVariable("id") Long id);
 }

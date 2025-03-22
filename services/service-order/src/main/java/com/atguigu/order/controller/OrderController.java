@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 //@RefreshScope//进行自动刷新nacos中的数据,方便进行热部署配置文件
 @RestController
-@RequestMapping("/api/order")
 public class OrderController {
 
 
