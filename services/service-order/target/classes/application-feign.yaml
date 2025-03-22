@@ -21,7 +21,8 @@ spring:
 #      eager: true #提前进行加载连接sentinel控制台
     sentinel:
       transport:
-        dashboard: 101.34.84.152:8858
+#        dashboard: 101.34.84.152:8858
+        dashboard: 192.168.10.10:8858
         port: 8719  # 默认端口，或者手动指定一个可用端口
       eager: true
 
